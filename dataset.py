@@ -13,3 +13,7 @@ class BERTDataset():
 
     def __len__(self):
         return len(self.review)
+
+    
+    def __getitem__(self,item):
+        review= str(self.review[item])
