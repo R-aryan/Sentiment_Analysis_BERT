@@ -54,7 +54,19 @@ def run():
     )
 
     valid_data_loader = torch.utils.data.DataLoader(
-       valid_dataset,
-       batch_size=config.VALID_BATCH_SIZE,
-       num_workers=1
+        valid_dataset,
+        batch_size=config.VALID_BATCH_SIZE,
+        num_workers=1
     )
+
+    cuda= torch.cuda.is_available()
+
+    if cuda:
+        device= torch.device("cuda")
+
+    else:
+        device= torch.device("cpu")
+
+    model= BERTBaseUncased()
+    model.to(device)
+
