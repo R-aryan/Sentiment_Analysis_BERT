@@ -34,3 +34,27 @@ def run():
 
     df_train= df_train.reset_index(drop=True)
     df_valid= df_valid.reset_index(drop=True)
+
+    train_dataset=dataset.BERTDataset(
+        review=df_train.review.values,
+        target=df_train.sentiment.values
+
+    )
+
+    train_data_loader= torch.utils.data.DataLoader(
+        train_dataset,
+        batch_size=config.TRAIN_BATCH_SIZE,
+        num_workers=4
+    )
+
+
+    valid_dataset = dataset.BERTDataset(
+        review=df_valid.review.values,
+        target=df_valid.sentiment.values
+    )
+
+    valid_data_loader = torch.utils.data.DataLoader(
+       valid_dataset,
+       batch_size=config.VALID_BATCH_SIZE,
+       num_workers=1
+    )
