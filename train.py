@@ -100,7 +100,7 @@ def run():
         engine.train_fn(train_data_loader,model,optimizer,device,schedular)
         outputs,targets=engine.eval_fn(valid_data_loader,model,device)
         outputs=np.array(outputs)>=0.5
-        accuracy=metrices.accuracy_score(targets,outputs)
+        accuracy=metrics.accuracy_score(targets,outputs)
         print(f"Accuracy Score = {accuracy}")
 
         if accuracy > best_accuracy:
