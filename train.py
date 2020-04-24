@@ -80,3 +80,10 @@ def run():
     ]
 
 
+    print("Printing optimizer parameters......******")
+    print(optimizer_parameters)
+    print("Printing optimizer parameters......******")
+
+
+
+
