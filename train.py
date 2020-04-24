@@ -97,12 +97,20 @@ def run():
     best_accuracy=0
 
     for epochs in range(config.EPOCHS):
+
+        #calling the training function in engine.py file
         engine.train_fn(train_data_loader,model,optimizer,device,schedular)
+        
+        #calling the evaluation function from the engine.py file to compute evaluation
         outputs,targets=engine.eval_fn(valid_data_loader,model,device)
+
         outputs=np.array(outputs)>=0.5
+
+        #calculating the accuracy after every epoch
         accuracy=metrics.accuracy_score(targets,outputs)
         print(f"Accuracy Score = {accuracy}")
-
+        
+        #updating the accuracy
         if accuracy > best_accuracy:
             torch.save(model.state_dict(), config.MODEL_PATH)
             best_accuracy = accuracy
