@@ -84,6 +84,21 @@ def run():
     print(optimizer_parameters)
     print("Printing optimizer parameters......******")
 
+    num_train_steps= int(len(df_train)/config.TRAIN_BATCH_SIZE*config.EPOCHS)
+
+    optimizer=AdamW(optimizer_parameters,lr=3e-5)
+
+    schedular=get_linear_schedule_with_warmup(
+        optimizer,
+        num_warmup_steps=0,
+        num_train_steps=num_train_steps
+    )
+
+    best_accuracy=0
+
+    for epochs in range(config.EPOCHS):
+        
+
 
 
 
