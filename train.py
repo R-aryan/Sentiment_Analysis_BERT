@@ -97,7 +97,24 @@ def run():
     best_accuracy=0
 
     for epochs in range(config.EPOCHS):
-        
+        engine.train_fn(train_data_loader,model,optimizer,device,schedular)
+        outputs,targets=engine.eval_fn(valid_data_loader,model,device)
+        outputs=np.array(outputs)>=0.5
+        accuracy=metrices.accuracy_score(targets,outputs)
+        print(f"Accuracy Score = {accuracy}")
+
+        if accuracy > best_accuracy:
+            torch.save(model.state_dict(), config.MODEL_PATH)
+            best_accuracy = accuracy
+
+
+
+
+
+if __name__ == "__main__":
+    run()
+
+
 
 
 
