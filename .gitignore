@@ -142,5 +142,6 @@ cython_debug/
 media
 static
 
-#large csv files
+#large csv and bin files
 .csv
+.bin
