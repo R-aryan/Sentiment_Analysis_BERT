@@ -33,8 +33,8 @@ class BERTDataset():
         token_type_ids = inputs["token_type_ids"]
 
         return {
-            'ids':torch.tensor(ids,dtype=torch.long)
-            'mask': torch.tensor(mask,dtype=torch.long)
-            'token_type_ids': torch.tensor(token_type_ids,dtype=torch.long)
+            'ids':torch.tensor(ids,dtype=torch.long),
+            'mask': torch.tensor(mask,dtype=torch.long),
+            'token_type_ids': torch.tensor(token_type_ids,dtype=torch.long),
             'targets':torch.tensor(self.target[item],dtype=torch.float)
         }
