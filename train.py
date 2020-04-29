@@ -91,7 +91,7 @@ def run():
     schedular=get_linear_schedule_with_warmup(
         optimizer,
         num_warmup_steps=0,
-        num_train_steps=num_train_steps
+        num_training_steps=num_train_steps
     )
 
     best_accuracy=0

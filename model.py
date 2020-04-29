@@ -17,7 +17,7 @@ class BERTBaseUncased(nn.Module):
 
         o1,o2=self.bert(
             ids,
-            attention_msk=mask,
+            attention_mask=mask,
             token_type_ids=token_type_ids
         )
 
