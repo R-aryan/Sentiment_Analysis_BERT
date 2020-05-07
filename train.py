@@ -80,9 +80,9 @@ def run():
     ]
 
 
-    print("Printing optimizer parameters......******")
-    print(optimizer_parameters)
-    print("Printing optimizer parameters......******")
+    # print("Printing optimizer parameters......******")
+    # print(optimizer_parameters)
+    # print("Printing optimizer parameters......******")
 
     num_train_steps= int(len(df_train)/config.TRAIN_BATCH_SIZE*config.EPOCHS)
 
