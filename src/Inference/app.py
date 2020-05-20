@@ -16,3 +16,13 @@ MODEL = None
 DEVICE = "cpu"
 PREDICTION_DICT = dict()
 memory = joblib.Memory("../input/", verbose=0)
+
+
+def predict_from_cache(sentence):
+    if sentence in PREDICTION_DICT:
+        return PREDICTION_DICT[sentence]
+    
+    else:
+        result= sentence_prediction(sentence)
+        PREDICTION_DICT[sentence]=result
+        return result
