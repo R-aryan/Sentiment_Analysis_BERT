@@ -31,5 +31,16 @@ def predict_from_cache(sentence):
 
 @memory.cache
 def sentence_prediction(sentence):
+
     tokenizer=config.TOKENIZER
     max_len= config.MAX_LEN
+    review=str(sentence)
+    review = " ".join(review.split())
+
+    inputs = tokenizer.encode_plus(
+        review,
+        None,
+        add_special_tokens=True,
+        max_length=max_len
+    )
+
