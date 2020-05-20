@@ -1,4 +1,4 @@
-import config
+from Training import config
 import torch
 import flask
 import time
@@ -26,3 +26,10 @@ def predict_from_cache(sentence):
         result= sentence_prediction(sentence)
         PREDICTION_DICT[sentence]=result
         return result
+
+
+
+@memory.cache
+def sentence_prediction(sentence):
+    tokenizer=config.TOKENIZER
+    max_len= config.MAX_LEN
