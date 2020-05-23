@@ -73,6 +73,10 @@ def sentence_prediction(sentence):
 
 if __name__=="main":
     MODEL=model.BERTBaseUncased()
+    MODEL.load_state_dict(torch.load(config.MODEL_PATH))
+    MODEL.to(DEVICE)
+    MODEL.eval()
+    app.run()
 
 
 
