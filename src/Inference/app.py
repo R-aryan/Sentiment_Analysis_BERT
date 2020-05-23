@@ -53,6 +53,8 @@ def sentence_prediction(sentence):
     mask = mask + ([0] * padding_length)
     token_type_ids = token_type_ids + ([0] * padding_length)
 
-    
+    ids = torch.tensor(ids, dtype=torch.long).unsqueeze(0)
+    mask = torch.tensor(mask, dtype=torch.long).unsqueeze(0)
+    token_type_ids = torch.tensor(token_type_ids, dtype=torch.long).unsqueeze(0)
 
 
