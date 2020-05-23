@@ -4,7 +4,7 @@ import flask
 import time
 from flask import Flask
 from flask import request
-from model import BERTBaseUncased
+from Training import model
 import functools
 import torch.nn as nn
 import joblib
@@ -69,6 +69,10 @@ def sentence_prediction(sentence):
 
     outputs = torch.sigmoid(outputs).cpu().detach().numpy()
     return outputs[0][0]
+
+
+if __name__=="main":
+    MODEL=model.BERTBaseUncased()
 
 
 
