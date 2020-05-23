@@ -49,5 +49,10 @@ def sentence_prediction(sentence):
     token_type_ids = inputs["token_type_ids"]
 
     padding_length=max_len-len(ids)
+    ids = ids + ([0] * padding_length)
+    mask = mask + ([0] * padding_length)
+    token_type_ids = token_type_ids + ([0] * padding_length)
+
+    
 
 
