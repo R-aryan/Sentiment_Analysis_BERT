@@ -57,4 +57,18 @@ def sentence_prediction(sentence):
     mask = torch.tensor(mask, dtype=torch.long).unsqueeze(0)
     token_type_ids = torch.tensor(token_type_ids, dtype=torch.long).unsqueeze(0)
 
+    ids = ids.to(DEVICE, dtype=torch.long)
+    token_type_ids = token_type_ids.to(DEVICE, dtype=torch.long)
+    mask = mask.to(DEVICE, dtype=torch.long)
+
+    outputs = MODEL(
+        ids=ids,
+        mask=mask,
+        token_type_ids=token_type_ids
+    )
+
+    outputs = torch.sigmoid(outputs).cpu().detach().numpy()
+    return outputs[0][0]
+
+
 
