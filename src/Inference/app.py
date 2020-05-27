@@ -70,6 +70,9 @@ def sentence_prediction(sentence):
     outputs = torch.sigmoid(outputs).cpu().detach().numpy()
     return outputs[0][0]
 
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 @app.route("/predict")
 def predict():
