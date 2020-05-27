@@ -71,6 +71,13 @@ def sentence_prediction(sentence):
     return outputs[0][0]
 
 
+@app.route("/predict")
+def predict():
+    sentence = request.args.get("sentence")
+    start_time = time.time()
+    positive_prediction = sentence_prediction(sentence)
+    negative_prediction = 1 - positive_prediction
+
 if __name__=="main":
     MODEL=model.BERTBaseUncased()
     MODEL.load_state_dict(torch.load(config.MODEL_PATH))
