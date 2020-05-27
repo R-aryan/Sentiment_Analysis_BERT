@@ -85,6 +85,8 @@ def predict():
         'time_taken': str(time.time() - start_time)
     }
 
+    return flask.jsonify(response)
+
 if __name__=="main":
     MODEL=model.BERTBaseUncased()
     MODEL.load_state_dict(torch.load(config.MODEL_PATH))
