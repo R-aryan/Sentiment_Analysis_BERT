@@ -74,7 +74,7 @@ def sentence_prediction(sentence):
 def home():
     return render_template('home.html')
 
-@app.route("/predict")
+@app.route('/predict',methods=['POST'])
 def predict():
     sentence = request.args.get("sentence")
     start_time = time.time()
