@@ -88,7 +88,8 @@ def predict():
         'time_taken': str(time.time() - start_time)
     }
 
-    return flask.jsonify(response)
+   return render_template('home.html', 
+   prediction_text='Sentiment Bifurcation for above Comment {} '.format(response))
 
 if __name__=="main":
     MODEL=model.BERTBaseUncased()
