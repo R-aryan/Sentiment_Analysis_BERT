@@ -95,7 +95,7 @@ if __name__=="main":
     MODEL.load_state_dict(torch.load(config.MODEL_PATH))
     MODEL.to(DEVICE)
     MODEL.eval()
-    app.run()
+    app.run(debug=True)
 
 
 
