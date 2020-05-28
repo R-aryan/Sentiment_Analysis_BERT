@@ -89,7 +89,8 @@ def predict():
     }
 
    return render_template('home.html', 
-   prediction_text='Sentiment Bifurcation for above Comment {} '.format(response))
+                           prediction_text='Sentiment Bifurcation for above Comment {} '
+                           .format(response))
 
 if __name__=="main":
     MODEL=model.BERTBaseUncased()
