@@ -2,7 +2,7 @@ import config
 import torch
 import flask
 import time
-from flask import Flask
+from flask import Flask, request, jsonify, render_template
 from flask import request
 import model
 import functools
@@ -93,8 +93,9 @@ def predict():
 
 if __name__=="__main__":
     MODEL=model.BERTBaseUncased()
-    MODEL.load_state_dict(torch.load(config.MODEL_PATH))
-    MODEL.to(DEVICE)
+
+    MODEL.load_state_dict(torch.load(config.MODEL_PATH,map_location=torch.device('cpu')))
+    #MODEL.to(DEVICE)
     MODEL.eval()
     app.run(debug=True)
 
