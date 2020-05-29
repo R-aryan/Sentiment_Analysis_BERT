@@ -91,7 +91,7 @@ def predict():
 
     return render_template('home.html', prediction_text='Sentiment Bifurcation for above Comment {} '.format(response))
 
-if __name__=="main":
+if __name__=="__main__":
     MODEL=model.BERTBaseUncased()
     MODEL.load_state_dict(torch.load(config.MODEL_PATH))
     MODEL.to(DEVICE)
