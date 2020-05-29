@@ -1,10 +1,10 @@
-from Training import config
+from training import config
 import torch
 import flask
 import time
 from flask import Flask
 from flask import request
-from Training import model
+from training import model
 import functools
 import torch.nn as nn
 import joblib
@@ -19,6 +19,7 @@ memory = joblib.Memory("../input/", verbose=0)
 
 
 def predict_from_cache(sentence):
+
     if sentence in PREDICTION_DICT:
         return PREDICTION_DICT[sentence]
     
@@ -88,9 +89,7 @@ def predict():
         'time_taken': str(time.time() - start_time)
     }
 
-   return render_template('home.html', 
-                           prediction_text='Sentiment Bifurcation for above Comment {} '
-                           .format(response))
+    return render_template('home.html', prediction_text='Sentiment Bifurcation for above Comment {} '.format(response))
 
 if __name__=="main":
     MODEL=model.BERTBaseUncased()
