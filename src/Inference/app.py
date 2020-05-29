@@ -1,10 +1,10 @@
-from training import config
+import config
 import torch
 import flask
 import time
 from flask import Flask
 from flask import request
-from training import model
+import model
 import functools
 import torch.nn as nn
 import joblib
