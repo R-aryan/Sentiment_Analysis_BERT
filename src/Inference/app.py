@@ -73,7 +73,8 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    sentence = request.args.get("sentence")
+    #sentence = request.args.get("sentence")
+    sentence=str(request.form.get('message'))
     start_time = time.time()
     positive_prediction = sentence_prediction(sentence)
     negative_prediction = 1 - positive_prediction
@@ -90,7 +91,7 @@ def predict():
 if __name__=="__main__":
     MODEL=model.BERTBaseUncased()
     MODEL.load_state_dict(torch.load(config.MODEL_PATH,map_location=torch.device('cpu')))
-    MODEL.to(DEVICE)
+    #MODEL.to(DEVICE)
     MODEL.eval()
     app.run(threaded=False,debug=True)
 
