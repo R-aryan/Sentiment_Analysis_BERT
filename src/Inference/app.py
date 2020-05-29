@@ -89,11 +89,10 @@ def predict():
 
 if __name__=="__main__":
     MODEL=model.BERTBaseUncased()
-
     MODEL.load_state_dict(torch.load(config.MODEL_PATH,map_location=torch.device('cpu')))
     MODEL.to(DEVICE)
     MODEL.eval()
-    app.run(debug=True)
+    app.run(threaded=False,debug=True)
 
 
 

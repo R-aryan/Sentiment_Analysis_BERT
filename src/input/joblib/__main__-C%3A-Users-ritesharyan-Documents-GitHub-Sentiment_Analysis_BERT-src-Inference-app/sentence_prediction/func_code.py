@@ -1,10 +1,9 @@
-# first line: 33
+# first line: 30
 @memory.cache
 def sentence_prediction(sentence):
-
-    tokenizer=config.TOKENIZER
-    max_len= config.MAX_LEN
-    review=str(sentence)
+    tokenizer = config.TOKENIZER
+    max_len = config.MAX_LEN
+    review = str(sentence)
     review = " ".join(review.split())
 
     inputs = tokenizer.encode_plus(
@@ -14,11 +13,11 @@ def sentence_prediction(sentence):
         max_length=max_len
     )
 
-    ids= inputs['input_ids']
-    mask= inputs['attention_mask']
+    ids = inputs["input_ids"]
+    mask = inputs["attention_mask"]
     token_type_ids = inputs["token_type_ids"]
 
-    padding_length=max_len-len(ids)
+    padding_length = max_len - len(ids)
     ids = ids + ([0] * padding_length)
     mask = mask + ([0] * padding_length)
     token_type_ids = token_type_ids + ([0] * padding_length)
