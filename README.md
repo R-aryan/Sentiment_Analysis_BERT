@@ -17,4 +17,4 @@ BERT (Bidirectional Encoder Representations from Transformers) is a recent paper
 - [For More about BERT click here](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 
 
-## How to 
+## How to run the model for training and Inference...!!
