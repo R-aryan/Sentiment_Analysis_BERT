@@ -21,4 +21,5 @@ BERT (Bidirectional Encoder Representations from Transformers) is a recent paper
 
 ### For Training the Model
 
-- For model training download the BERT_BASE_UNCASED model from here and extract it under **..src/input** folder
+- [For model training download the BERT_BASE_UNCASED model from here](https://www.kaggle.com/abhishek/bert-base-uncased).
+- After downloading extract the zip file under **..src/input** folder
