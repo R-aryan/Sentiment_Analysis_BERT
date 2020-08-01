@@ -20,3 +20,5 @@ BERT (Bidirectional Encoder Representations from Transformers) is a recent paper
 ## How to run the model for training and Inference...!!
 
 ### For Training the Model
+
+- For model training download the BERT_BASE_UNCASED model from here and extract it under **..src/input** folder
