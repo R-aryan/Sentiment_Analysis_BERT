@@ -17,11 +17,13 @@ BERT (Bidirectional Encoder Representations from Transformers) is a recent paper
 - [For More about BERT click here](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 
 
-## How to run the model for training and Inference...!!
+## How to run the model for Training and Inference...!!
+
+- **First of all create a virtual environment and run requirements.txt file**
 
 ### For Training the Model
 
 - [For model training download the BERT_BASE_UNCASED model from here](https://www.kaggle.com/abhishek/bert-base-uncased).
 - [You can also refer to the official hugginface documentation for BERT from here.](https://huggingface.co/transformers/model_doc/bert.html)
 - After downloading extract the zip file under **..src/input** folder.
-- After follwing the 
+- After following the above steps 
