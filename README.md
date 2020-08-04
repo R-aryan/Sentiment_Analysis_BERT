@@ -27,4 +27,4 @@ BERT (Bidirectional Encoder Representations from Transformers) is a recent paper
 - [You can also refer to the official hugginface documentation for BERT from here.](https://huggingface.co/transformers/model_doc/bert.html)
 - After downloading extract the zip file under **..src/input** folder.
 - Go to the **..src/training/config.py** to check the configurations and dataset and the model path and change accordingly.
-- 
+- After following the above steps navigate to **..src/training/ and run the app.py** to begin training. 
