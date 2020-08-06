@@ -29,3 +29,6 @@ BERT (Bidirectional Encoder Representations from Transformers) is a recent paper
 - Go to the **..src/training/config.py** to check the configurations and dataset and the model path and change accordingly.
 - After following the above steps navigate to **..src/training/ and run the app.py** to begin training.
 - After training is completed the weights of the model will be saved as per the name and location given in the config file.
+
+
+### For Inference and Serving the model with flask app
