@@ -60,7 +60,7 @@ mss==5.0.0
 munkres==1.1.2
 nbconvert==5.6.1
 nbformat==5.0.6
-notebook==6.1.5
+notebook
 numpy==1.18.2
 oauthlib==3.1.0
 olefile==0.46
@@ -115,7 +115,7 @@ tornado==6.0.4
 tqdm==4.43.0
 traitlets==4.3.3
 transformers==2.8.0
-urllib3==1.26.5
+urllib3
 vidgear==0.1.6
 wcwidth==0.1.9
 webencodings==0.5.1
