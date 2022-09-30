@@ -28,7 +28,7 @@ google-pasta==0.2.0
 goto-statement==1.2
 grpcio==1.27.2
 h5py==2.10.0
-joblib==0.14.1
+joblib==1.2.0
 json-tricks==3.14.0
 jsonschema==3.2.0
 jupyter==1.0.0
